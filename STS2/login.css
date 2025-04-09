@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Sifonn';
+    src: url('fonts/Sifonn.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('QCUbuild.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;  /* Ensure it stays within the body */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 207, 86, 0.50);
+    z-index: -1;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px 10px;
+    width: 100%;
+    height: 1.5cm;
+    position: fixed;
+    z-index: 99999;
+    box-sizing: border-box;
+}
+
+/* QCU Logo & Text */
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.qcu-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.header h1 {
+    font-family: 'Sifonn', sans-serif;
+    color: #556b5b;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Navigation */
+.header nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.header nav a i {
+    font-size: 35px;
+}
+
+/* Login Panel */
+.right-panel {
+    background-color: rgba(85, 107, 91, 0.9);
+    border-radius: 50px;
+    padding: 50px 60px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 70vh;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 27%;
+}
+
+
+/* Login Header */
+.login-header {
+    width: 100%;
+    text-align: left;
+    font-size: 2em;
+    font-family: 'League Spartan', sans-serif;
+    color: #f5e8dc;
+    margin-bottom: 80px;
+    margin-top: -100px;
+    padding-left: 120px;
+}
+
+/* Login Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 300px;
+}
+
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-group input {
+    width: 90%;
+    padding: 10px 55px;
+    border: none;
+    border-radius: 20px;
+    background-color: #6b8b74;
+    color: #f5e8dc;
+}
+
+.input-group input::placeholder {
+    font-family: 'Poppins';
+    color: #ffffff;
+    opacity: 1;
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f5e8dc;
+}
+
+.input-group i.fa-user,
+.input-group i.fa-lock {
+    left: 20px;
+}
+
+.toggle-password {
+    right: -60px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.toggle-password:hover {
+    color: #3a3df2;
+}
+
+/* Options */
+.options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 115%;
+    gap: 90px;
+    color: #f5e8dc;
+    font-size: 0.9em;
+    margin-bottom: 50px;
+    padding-right: 10px;
+}
+
+/* Buttons */
+.login-button {
+    display: block;
+    width: 120%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f5e8dc;
+    color: #4a6652;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.signup-button {
+    display: block; /* Make it behave like a button */
+    font-size: 14px;
+    text-align: center;
+    width: 100%; /* Reduce width for better alignment */
+    padding: 10px 30px; /* Adjust padding (top-bottom: 10px, left-right: 30px) */
+    border: none;
+    border-radius: 20px;
+    background-color: #f5e8dc;
+    color: #4a6652;
+    font-weight: bold;
+    text-decoration: none; 
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0 auto; /* Center the button */
+}
+
+/* Hover Effect */
+.signup-button:hover,
+.login-button:hover {
+    background-color: #e0d1c2;
+    color: #3a4f3a;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120%;
+    color: #f5e8dc;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex-grow: 1;  
+    height: 1px;  
+    background-color: #f5e8dc;
+}
+
+.divider::before {
+    margin-right: 10px;
+}
+
+.divider::after {
+    margin-left: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-header {
+        width: 100%;
+        text-align: left;
+        font-size: 2em;
+        font-family: 'League Spartan', sans-serif;
+        color: #f5e8dc;
+        margin-bottom: 5px;
+        margin-top: -20px;
+        margin-bottom: 40px;
+        padding-left: 170px;
+        font-size: 1.5em;
+    }
+    
+    .right-panel {
+        width: 70%;
+        height: auto;
+        padding: 20px;
+        position: static;
+        border-radius: 30px;
+        transform: none;
+        margin-top: 30%;
+    }
+    
+
+    .input-group input {
+        width: 67.5%;
+        padding: 10px 45px;
+        border: none;
+        border-radius: 20px;
+        background-color: #6b8b74;
+        color: #f5e8dc;
+    }
+
+    .input-group input::placeholder {
+        font-family: 'Poppins';
+        color: #ffffff;
+        opacity: 1;
+    }
+    
+    .password-container {
+        display: block;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 50px;
+        width: 108%;
+    }
+   
+    .input-group{
+        width: 100%;
+        margin-bottom: 20px;
+        max-width: 300px;
+    }
+
+    .input-group i {
+        position: absolute;
+        top: 52%;
+        right: 4%;
+        transform: translateY(-50%);
+        color: #f5e8dc;
+    }
+
+    
+    .options {
+    display: absolute;
+    justify-content: flex-end;
+    align-items: center;
+    width: 97%;
+    gap: 20px;
+    color: #f5e8dc;
+    font-size: 0.9em;
+    margin-bottom: 100px;
+    padding-right: 7px;
+    }
+
+    
+.input-group i.fa-user,
+.input-group i.fa-lock,
+.input-group i.fa-envelope{
+    bottom: 45px;
+    top: 10px;
+}
+
+.input-group i.fa-eye{
+        right: 13px; /* Match the login page */
+        top: 52%;
+        transform: translateY(-50%);
+        position: absolute;
+        cursor: pointer;
+    
+}
+.toggle-password {
+    right: -60px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.toggle-password:hover {
+    color: #3a3df2;
+}
+
+
+    .login-button {
+        display: block; /* Make it behave like a button */
+        font-size: 14px;
+        text-align: center;
+        width: 100%; /* Reduce width for better alignment */
+        padding: 10px 30px; /* Adjust padding (top-bottom: 10px, left-right: 30px) */
+        border: none;
+        border-radius: 20px;
+        background-color: #f5e8dc;
+        color: #4a6652;
+        font-weight: bold;
+        text-decoration: none; 
+        transition: background-color 0.3s, color 0.3s;
+        margin: 0 auto; /* Center the button */
+    }
+    
+    .signup-button {
+        width: 92%;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: #f5e8dc;
+        color: #4a6652;
+        font-weight: bold;
+    }
+
+    .signup-button:hover,
+.login-button:hover {
+    background-color: #e0d1c2;
+    color: #3a4f3a;
+}
+
+    .divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: #f5e8dc;
+        font-size: 1em;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 10px 0;
+    }
+
+    .divider::before, .divider::after {
+        content: '';
+        flex-grow: 1;  
+        height: 1px;  
+        background-color: #f5e8dc;
+    }
+    
+    .divider::before {
+        margin-right: 10px;
+    }
+    
+    .divider::after {
+        margin-left: 10px;
+    }
+}
+

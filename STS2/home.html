@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quezon City University</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#header1').load('header.html');
+        });
+    </script>
+
+<style>
+      
+    #skipButton {
+        position: absolute;
+        top: -30px;
+        right: -50px;
+        background-color: white;
+        color: black;
+        border: none;
+        padding: 10px;
+        transition-delay: 10s;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 30%;
+    }
+
+    #promoVideo {
+        position: absolute;
+        top: -53.5%;
+        left: -243.6%;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover; 
+        z-index: 1; 
+    }
+</style>
+</head>
+<body>
+    <div id="header1"></div>
+    <main>
+        <section class="banner">
+            <img src="qcugate.jpg" alt="University Gate">
+            <div class="banner-text">
+                <h2>navigate</h2>
+                <h2>campus with</h2>
+                <h2>ease</h2>
+                <!-- Initially hidden video -->
+                <video id="promoVideo" class="promo-video" src="" style="display:none;" ></video>
+                <button onclick="showVideo()">Explore Now</button>
+                <button id="skipButton" onclick="redirectHome()" style="display:none;">X</button> <!-- Skip button ('X') -->
+                
+            </div>
+        </section>        
+        <section class="map-features">
+            <div class="body-header"><h2>UNIVERSITY MAP FEATURES</h2></div>
+            <div class="features">
+                <div class="feature">
+                    <a href="campus-layout.html">
+                        <img src="campust.jpg" alt="Campus Layout">
+                        <p>Campus Layout</p>
+                    </a>
+                </div>
+                <div class="feature">
+                    <a href="building-navigation.html">
+                        <img src="building.jpg" alt="Building Navigation">
+                        <p>Building Navigation</p>
+                    </a>
+                </div>
+                <div class="feature">
+                    <a href="emergency-hotspots.html">
+                        <img src="fire.jpg" alt="Emergency Hotspots">
+                        <p>Emergency Hotspots</p>
+                    </a>
+                </div>
+                <div class="feature">
+                    <a href="evacuation-area.html">
+                        <img src="evac.jpg" alt="Evacuation Area">
+                        <p>Evacuation Area</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript to Detect Mobile Devices and Adjust UI -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function isMobile() {
+                return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            }
+
+            if (isMobile()) {
+                document.body.classList.add("mobile-layout"); // Auto adjust UI
+            }
+        });
+    </script>
+
+<script>
+    // Function to show the video and play it
+    function showVideo() {
+        // Hide the button and show the video
+        document.querySelector('button').style.display = 'none'; // Hide the Explore Now button
+        var video = document.getElementById('promoVideo');
+        video.style.display = 'block'; // Show the video
+        video.play(); // Start playing the video
+
+        // Show the skip button (X)
+        document.getElementById('skipButton').style.display = 'block';
+
+        // Add event listener to redirect after the video ends
+        video.addEventListener('ended', function() {
+            window.location.href = "home.html"; // Redirect to home page after video ends
+        });
+    }
+
+    // Function to allow immediate redirection to the home page if the 'X' button is clicked
+    function redirectHome() {
+        window.location.href = "home.html"; // Redirect to home page when skip button ('X') is clicked
+    }
+</script>
+</body>
+</html>
